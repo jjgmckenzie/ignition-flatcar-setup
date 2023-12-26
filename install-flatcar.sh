@@ -3,7 +3,7 @@ chmod +x flatcar-install
 
 echo Please enter your SSH Public Key
 read SECRET_SSH_PUBLICKEY
-sed -i "s|{{SECRET_SSH_PUBLICKEY}}|$SECRET_SSH_PUBLICKEY|g" config.ignition.json
+sed -i "s|SECRET_SSH_PUBLICKEY|$SECRET_SSH_PUBLICKEY|g" config.ignition.json
 
 ./flatcar-install -s -i config.ignition.json
 shutdown -r +1
